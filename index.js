@@ -22,15 +22,15 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.ws("/llm-websocket/:call_id", async (ws, req) => {
-  const callId = req.params.call_id;
+app.ws("/llm-websocket", async (ws, req) => {
+  const callId = 1; //req.params.call_id;
 
   ws.on("error", (err) => {
     console.error("Error received in LLM websocket client: ", err);
   });
 
   // Begin message
-  llmClient.BeginMessage(ws);
+  llmClient.BeginMessage(ws); 
 
   ws.on("message", async (data, isBinary) => {
     if (isBinary) {
