@@ -22,7 +22,7 @@ class DemoLlmClient {
 
     try {
       const res = {
-        response_id: request.response_id,
+        response_id: 1,
         content: "I am sorry, can you say that again?",
         content_complete: true,
         end_call: false,
