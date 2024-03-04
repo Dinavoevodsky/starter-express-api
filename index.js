@@ -38,6 +38,7 @@ app.ws("/llm-websocket/:call_id", async (ws, req) => {
       ws.close(1002, "Cannot find corresponding Retell LLM.");
     }
     try {
+      console.log("Got a message: ", data);
       const request = data.toString();
       // LLM will think about a response
       llmClient.DraftResponse(request, ws);
