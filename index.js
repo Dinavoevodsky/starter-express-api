@@ -14,7 +14,7 @@ const express = require('express');
 const app = express();
 const DemoLlmClient = require("./dumb_llm").DemoLlmClient;
 const expressWs = require('express-ws')(app);
-const port = 3000;
+const port = 8080;
 
 var llmClient = new DemoLlmClient();
 
