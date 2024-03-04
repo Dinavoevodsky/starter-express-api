@@ -38,7 +38,7 @@ app.ws("/llm-websocket/:call_id", async (ws, req) => {
       ws.close(1002, "Cannot find corresponding Retell LLM.");
     }
     try {
-      const request = JSON.parse(data.toString());
+      const request = data.toString();
       // LLM will think about a response
       llmClient.DraftResponse(request, ws);
     } catch (err) {
